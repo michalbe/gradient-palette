@@ -1,7 +1,10 @@
 import random
 
+def to_hex(rgb):
+	return '#' + ''.join('%02x'%i for i in rgb).upper()
+
 def random_color():
 	r = lambda: random.randint(0,255)
-	return '#' + ''.join('%02x'%i for i in (r(), r(), r())).upper()
+	return (r(), r(), r())
 
-print(random_color())
+print(to_hex(random_color()))
