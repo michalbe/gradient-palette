@@ -31,4 +31,8 @@ c10 = random_color()
 c01 = random_color()
 c11 = random_color()
 
-print(gradient(c00, c01, size))
+output = list()
+first_row = gradient(c00, c01, size)
+output.append(first_row)
+
+print(output)
