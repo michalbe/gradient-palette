@@ -9,7 +9,6 @@ def random_color():
 	r = lambda: random.randint(0,255)
 	return [r(), r(), r()]
 
-
 def gradient(start, end, steps):
 	diff_r = int((end[0] - start[0]) / steps)
 	diff_g = int((end[1] - start[1]) / steps)
