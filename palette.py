@@ -1,5 +1,5 @@
-import random
 from PIL import Image
+import random
 import sys
 
 size = int(sys.argv[1]) if len(sys.argv) > 1 else 5
