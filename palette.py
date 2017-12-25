@@ -1,8 +1,9 @@
 import random
 from PIL import Image
+import sys
 
-size = 5
-scale = 100
+size = sys.argv[1] if len(sys.argv) > 1 else 5
+final_scale = 500
 
 def to_hex(rgb):
 	return '#' + ''.join('%02x'%i for i in rgb).upper()
@@ -43,5 +44,5 @@ for i in range(0, size):
 
 im = Image.new('RGB', (size, size))
 im.putdata(tuple(output))
-im = im.resize((size * scale, size * scale))
+im = im.resize((final_scale, final_scale))
 im.save('images/' + ''.join(random.choice('0123456789ABCDEF') for i in range(16)) + '.png')
