@@ -1,4 +1,5 @@
 import random
+from PIL import Image
 
 size = 5;
 
@@ -41,3 +42,7 @@ for i in range(0, size):
 
 
 print(output)
+
+im = Image.new('RGB', (size, size))
+im.putdata(output)
+im.save('elo.png')
