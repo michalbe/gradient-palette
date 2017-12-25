@@ -1,7 +1,8 @@
 import random
 from PIL import Image
 
-size = 5;
+size = 5
+scale = 10
 
 def to_hex(rgb):
 	return '#' + ''.join('%02x'%i for i in rgb).upper()
@@ -16,33 +17,33 @@ def gradient(start, end, steps):
 	diff_b = int((end[2] - start[2]) / steps)
 
 	colors = list()
-	colors.append(start)
+	colors.append(tuple(start))
 	for i in range(1, steps - 1):
 		color = list()
 		color.append(start[0] + i * diff_r)
 		color.append(start[1] + i * diff_g)
 		color.append(start[2] + i * diff_b)
-		colors.append(color)
-	colors.append(end)
-	return colors
+		colors.append(tuple(color))
+	colors.append(tuple(end))
+	return tuple(colors)
 
 c00 = random_color()
 c10 = random_color()
 c01 = random_color()
 c11 = random_color()
 
-output = list()
+output = tuple()
 first_row = gradient(c00, c10, size)
 last_row = gradient(c01, c11, size)
 
 for i in range(0, size):
 	top_color = first_row[i]
 	bottom_color = last_row[i]
-	output.append(gradient(top_color, bottom_color, size))
+	output = output + gradient(top_color, bottom_color, size)
 
 
-print(output)
+print(tuple(output))
 
 im = Image.new('RGB', (size, size))
-im.putdata(output)
+im.putdata(tuple(output))
 im.save('elo.png')
