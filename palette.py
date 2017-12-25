@@ -2,8 +2,8 @@ import random
 from PIL import Image
 import sys
 
-size = sys.argv[1] if len(sys.argv) > 1 else 5
-final_scale = 500
+size = int(sys.argv[1]) if len(sys.argv) > 1 else 5
+final_scale = int(sys.argv[2]) if len(sys.argv) > 2 else 500
 
 def to_hex(rgb):
 	return '#' + ''.join('%02x'%i for i in rgb).upper()
