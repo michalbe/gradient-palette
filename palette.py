@@ -41,9 +41,6 @@ for i in range(0, size):
 	bottom_color = last_row[i]
 	output = output + gradient(top_color, bottom_color, size)
 
-
-print(tuple(output))
-
 im = Image.new('RGB', (size, size))
 im.putdata(tuple(output))
 im = im.resize((size * scale, size * scale))
