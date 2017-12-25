@@ -2,7 +2,7 @@ import random
 from PIL import Image
 
 size = 5
-scale = 10
+scale = 100
 
 def to_hex(rgb):
 	return '#' + ''.join('%02x'%i for i in rgb).upper()
@@ -46,4 +46,5 @@ print(tuple(output))
 
 im = Image.new('RGB', (size, size))
 im.putdata(tuple(output))
+im = im.resize((size * scale, size * scale))
 im.save('elo.png')
