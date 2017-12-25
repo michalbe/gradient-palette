@@ -31,12 +31,13 @@ c01 = random_color()
 c11 = random_color()
 
 output = list()
-first_row = gradient(c00, c01, size)
+first_row = gradient(c00, c10, size)
 last_row = gradient(c01, c11, size)
 
 for i in range(0, size):
 	top_color = first_row[i]
 	bottom_color = last_row[i]
 	output.append(gradient(top_color, bottom_color, size))
+
 
 print(output)
