@@ -1,4 +1,4 @@
-gradient_palette
+gradient-palette
 ---
 by [@michalbe](http://github.com/michalbe)
 
