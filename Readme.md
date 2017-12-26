@@ -9,9 +9,8 @@ by [@michalbe](http://github.com/michalbe)
   - `python palette.py [size] [final_image_size]`
 
 ### Defaults
-
-	- `size`: 5 (5x5)
-	- `final_image_size`: 500 (px)
+  - `size`: 5 (5x5)
+  - `final_image_size`: 500 (px)
 
 ### Examples
 #### 5x5
